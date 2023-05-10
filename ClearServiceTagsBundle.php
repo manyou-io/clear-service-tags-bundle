@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Manyou\RemoveDataCollectorBundle;
+namespace Manyou\ClearServiceTagsBundle;
 
-use Manyou\RemoveDataCollectorBundle\DependencyInjection\RemoveDataCollectorPass;
+use Manyou\ClearServiceTagsBundle\DependencyInjection\RemoveDataCollectorPass;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class RemoveDataCollectorBundle extends Bundle
+class ClearServiceTagsBundle extends Bundle
 {
     public function build(ContainerBuilder $container): void
     {

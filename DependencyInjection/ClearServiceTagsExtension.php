@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Manyou\RemoveDataCollectorBundle\DependencyInjection;
+namespace Manyou\ClearServiceTagsBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
@@ -13,6 +13,6 @@ class RemoveDataCollectorExtension extends Extension
     {
         $config = $this->processConfiguration(new Configuration(), $configs);
 
-        $container->setParameter('remove_data_collector.services', $config['services']);
+        $container->setParameter('clear_service_tags.services', $config['services']);
     }
 }

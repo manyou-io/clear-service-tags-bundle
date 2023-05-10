@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Manyou\RemoveDataCollectorBundle\DependencyInjection;
+namespace Manyou\ClearServiceTagsBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -11,11 +11,11 @@ class RemoveDataCollectorPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container): void
     {
-        if (! $container->hasParameter('remove_data_collector.services')) {
+        if (! $container->hasParameter('clear_service_tags.services')) {
             return;
         }
 
-        foreach ($container->getParameter('remove_data_collector.services') as $dataCollector) {
+        foreach ($container->getParameter('clear_service_tags.services') as $dataCollector) {
             if (! $container->hasDefinition($dataCollector)) {
                 continue;
             }
@@ -25,6 +25,6 @@ class RemoveDataCollectorPass implements CompilerPassInterface
             $definition->clearTags();
         }
 
-        $container->getParameterBag()->remove('remove_data_collector.services');
+        $container->getParameterBag()->remove('clear_service_tags.services');
     }
 }
