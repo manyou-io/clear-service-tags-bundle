@@ -7,7 +7,7 @@ namespace Manyou\ClearServiceTagsBundle\DependencyInjection;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class RemoveDataCollectorPass implements CompilerPassInterface
+class ClearServiceTagsPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container): void
     {
